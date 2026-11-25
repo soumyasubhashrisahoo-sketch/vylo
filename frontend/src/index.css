@@ -1,0 +1,140 @@
+/* Original <style> block from the HTML, verbatim (placed first, as in the source, so Tailwind output follows it). */
+:root {
+  --vylo-bg: #FAFAFA;
+  --vylo-surface: #FFFFFF;
+  --vylo-surface-sub: #F3F4F6;
+  --vylo-border: #E5E7EB;
+  --vylo-text: #030712;
+  --vylo-text-muted: #6B7280;
+}
+html.dark {
+  --vylo-bg: #0B0D12;
+  --vylo-surface: #13161F;
+  --vylo-surface-sub: #1B202C;
+  --vylo-border: #262C3A;
+  --vylo-text: #F9FAFB;
+  --vylo-text-muted: #9CA3AF;
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--vylo-bg);
+  color: var(--vylo-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+/* Global Dark Theme Overrides for Tailwind Surface & Text Classes */
+html.dark .bg-\[\#FAFAFA\] { background-color: #0B0D12 !important; }
+html.dark .bg-white { background-color: #13161F !important; }
+html.dark .bg-white\/95 { background-color: rgba(19, 22, 31, 0.95) !important; }
+html.dark .bg-gray-50, html.dark .bg-gray-50\/60, html.dark .bg-gray-100, html.dark .bg-gray-100\/90 {
+  background-color: #1B202C !important;
+}
+html.dark .border-gray-200, html.dark .border-gray-200\/90, html.dark .border-gray-200\/80, html.dark .border-gray-100 {
+  border-color: #262C3A !important;
+}
+html.dark .text-gray-950, html.dark .text-gray-900 { color: #F9FAFB !important; }
+html.dark .text-gray-800, html.dark .text-gray-700 { color: #D1D5DB !important; }
+html.dark .text-gray-600, html.dark .text-gray-500 { color: #9CA3AF !important; }
+html.dark .hover\:bg-gray-50:hover, html.dark .hover\:bg-gray-100:hover, html.dark .hover\:bg-gray-200:hover {
+  background-color: #232938 !important;
+}
+html.dark .bg-amber-50\/40 { background-color: rgba(245, 158, 11, 0.12) !important; }
+html.dark .bg-indigo-50\/50 { background-color: rgba(79, 70, 229, 0.14) !important; }
+html.dark .bg-pink-50\/50 { background-color: rgba(236, 72, 153, 0.12) !important; }
+html.dark .border-indigo-200\/90, html.dark .border-indigo-200 { border-color: rgba(99, 102, 241, 0.35) !important; }
+html.dark .border-pink-200\/80, html.dark .border-pink-200 { border-color: rgba(236, 72, 153, 0.35) !important; }
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+.panel-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.panel-scroll::-webkit-scrollbar-thumb {
+  background-color: #9CA3AF;
+  border-radius: 9999px;
+}
+.leaflet-container {
+  z-index: 10 !important;
+  font-family: 'Inter', sans-serif;
+  background: #111318;
+}
+.vylo-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  border: 2.5px solid #FFFFFF;
+}
+.vylo-night-tiles {
+  filter: invert(93%) hue-rotate(180deg) brightness(86%) contrast(114%) saturate(22%);
+}
+.vylo-safe-route-core {
+  filter: drop-shadow(0 0 8px rgba(253, 224, 71, 0.9)) drop-shadow(0 0 18px rgba(251, 191, 36, 0.65));
+}
+.vylo-route-callout {
+  background: rgba(20, 22, 27, 0.94);
+  backdrop-filter: blur(8px);
+  color: #D1D5DB;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.vylo-route-callout:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #FFFFFF;
+}
+.vylo-route-callout.active {
+  background: rgba(14, 16, 20, 0.97);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 14px rgba(253, 224, 71, 0.25);
+}
+.vylo-endpoint-tag {
+  background: rgba(17, 19, 24, 0.88);
+  backdrop-filter: blur(6px);
+  color: #E5E7EB;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+@keyframes gpsPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  70% { transform: scale(2.1); opacity: 0; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+.gps-pulse-ring {
+  animation: gpsPulse 2s infinite ease-out;
+}
+@keyframes sosRipple {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  70% { transform: scale(1.22); opacity: 0; }
+  100% { transform: scale(1.22); opacity: 0; }
+}
+.sos-pulse-ring {
+  animation: sosRipple 2.2s infinite ease-out;
+}
+
+/* Tailwind (replaces the cdn.tailwindcss.com script) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
